@@ -1,11 +1,15 @@
 package com.example.heat_index;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 //Noch die Main, sollte aber ausgetauscht werden sobald alle anderen laufen
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
 
         temp_text = findViewById(R.id.temp_text);
         humidity = findViewById(R.id.humidity_text);
