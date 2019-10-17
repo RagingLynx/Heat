@@ -10,4 +10,5 @@
     <string name="string_percent">%</string>
     <string name="heat_index_berechnen">Hitze-Index berechnen</string>
     <string name="ergebnis">Ergebnis</string>
+    <string name="f">°F</string>
 </resources>
