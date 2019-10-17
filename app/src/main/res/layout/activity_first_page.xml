@@ -6,12 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_bar"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu"
+        android:background="@color/darkorange"
+        app:itemIconTint="@color/bot_nav_color"
+        app:itemTextColor="@color/bot_nav_color"
         />
 
 </RelativeLayout>

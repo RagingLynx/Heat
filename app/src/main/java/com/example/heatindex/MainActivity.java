@@ -2,6 +2,7 @@ package com.example.heatindex;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button calculate;
     private EditText temp_text;
     private EditText humidity;
+    private Button switchbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         temp_text = findViewById(R.id.temp_text);
         humidity = findViewById(R.id.humidity_text);
+        switchbutton = findViewById(R.id.calculate);
 
         switchDegree = (Button) findViewById(R.id.degree_switch);
         switchDegree.setOnClickListener(e -> {
@@ -40,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(Double.parseDouble(humidity.getText().toString()));
             System.out.println(isFahrenheit);
             System.out.println(w.getHeatIndex());
+        });
+
+        switchbutton.setOnClickListener(e -> {
+            Intent intent = new Intent(this, activity_first_page.class);
+            startActivity(intent);
+
         });
 
     }

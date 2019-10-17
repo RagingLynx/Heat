@@ -3,4 +3,10 @@
     <string name="first_page_name">Eingabe</string>
     <string name="second_page_name">Verlauf</string>
     <string name="third_page_name">Info</string>
+    <string name="eingabe">Eingabe</string>
+    <string name="au_entemperatur">Außentemperatur</string>
+    <string name="c">°C</string>
+    <string name="relative_luftfeuchtigkeit">relative Luftfeuchtigkeit</string>
+    <string name="string_percent">%</string>
+    <string name="heat_index_berechnen">Hitze-Index berechnen</string>
 </resources>
