@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Heat_Index</string>
+    <string name="app_name">HeatIndex</string>
+    <string name="eingabe">Eingabe</string>
+    <string name="au_entemperatur">Außentemperatur</string>
+    <string name="c">°C</string>
+    <string name="relative_luftfeuchtigkeit">relative Luftfeuchtigkeit</string>
+    <string name="heat_index_berechnen">Heat-Index berechnen</string>
+    <string name="string_percent">%</string>
+    <string name="verlauf">Verlauf</string>
+    <string name="calculate">Berechnen</string>
+    <string name="info">Info</string>
 </resources>
