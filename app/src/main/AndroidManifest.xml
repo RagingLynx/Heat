@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".DatenAnsicht"></activity>
+        <activity android:name=".DatenAnsichtActivity"></activity>
         <activity android:name=".InfoActivity" />
         <activity android:name=".AusgabeActivity" />
         <activity android:name=".EingabeActivity" />
