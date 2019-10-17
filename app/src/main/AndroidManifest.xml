@@ -11,8 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.example.heatindex.activity_first_page"></activity>
-        <activity android:name="com.example.heatindex.MainActivity">
+        <activity android:name=".DatenAnsicht"></activity>
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".AusgabeActivity" />
+        <activity android:name=".EingabeActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

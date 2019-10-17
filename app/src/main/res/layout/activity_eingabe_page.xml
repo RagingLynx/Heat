@@ -17,7 +17,7 @@
         android:id="@+id/bottom_bar"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu"
-        android:background="@color/darkorange"
+        android:background="@color/darkgrey"
         app:itemIconTint="@color/bot_nav_color"
         app:itemTextColor="@color/bot_nav_color"
         />

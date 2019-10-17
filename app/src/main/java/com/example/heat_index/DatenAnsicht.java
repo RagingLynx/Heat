@@ -1,16 +1,14 @@
-package com.example.heatindex;
+package com.example.heat_index;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.heat_index.R;
-
-public class activity_first_page extends AppCompatActivity {
+public class DatenAnsicht extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_page);
+        setContentView(R.layout.activity_daten_ansicht);
     }
 }

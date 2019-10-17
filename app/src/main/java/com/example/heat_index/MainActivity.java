@@ -1,4 +1,4 @@
-package com.example.heatindex;
+package com.example.heat_index;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.heat_index.R;
-
+//Noch die Main, sollte aber ausgetauscht werden sobald alle anderen laufen
 public class MainActivity extends AppCompatActivity {
     private Button switchDegree;
     private boolean isFahrenheit = false;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         switchbutton.setOnClickListener(e -> {
-            Intent intent = new Intent(this, activity_first_page.class);
+            Intent intent = new Intent(this, EingabeActivity.class);
             startActivity(intent);
 
         });

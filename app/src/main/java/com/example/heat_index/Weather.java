@@ -1,4 +1,4 @@
-package com.example.heatindex;
+package com.example.heat_index;
 
 public class Weather {
     private double temp;
