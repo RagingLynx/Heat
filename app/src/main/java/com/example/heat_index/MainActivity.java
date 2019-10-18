@@ -23,23 +23,22 @@ public class MainActivity extends AppCompatActivity {
     private EditText temp_text;
     private EditText humidity;
     private FrameLayout frameContainer;
+    private Fragment eingabeFrag, ausgabeFrag, infoFrag, verlaufFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
-                new EingabeFragment()).commit();
+        eingabeFrag = new EingabeFragment();
+        ausgabeFrag = new AusgabeFragment();
+        infoFrag = new InfoFragment();
+        verlaufFrag = new VerlaufFragment();
 
         frameContainer = findViewById(R.id.frame_container);
-        /*temp_text = findViewById(R.id.temperatur_eingabe);
-        switchDegree = findViewById(R.id.degree_switch);
 
-        switchDegree.setOnClickListener(e -> {
-            String tempEingabe = temp_text.getText().toString();
-        }); */
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
+                eingabeFrag).commit();
         BottomNavigationView botNav = findViewById(R.id.bottom_bar);
         botNav.setOnNavigationItemSelectedListener(navbarListener);
 
@@ -52,16 +51,16 @@ public class MainActivity extends AppCompatActivity {
                 Fragment selectedFrag = null;
                 switch (menuItem.getItemId()) {
                     case R.id.eingabe_nav:
-                        selectedFrag = new EingabeFragment();
+                        selectedFrag = eingabeFrag;
                         break;
                     case R.id.ausgabe_nav:
-                        selectedFrag = new AusgabeFragment();
+                        selectedFrag = ausgabeFrag;
                         break;
                     case R.id.verlauf_nav:
-                        selectedFrag = new VerlaufFragment();
+                        selectedFrag = verlaufFrag;
                         break;
                     case R.id.info_nav:
-                        selectedFrag = new InfoFragment();
+                        selectedFrag = infoFrag;
                         break;
                 }
 

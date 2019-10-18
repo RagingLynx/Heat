@@ -1,41 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EingabeFragment"
-    android:background="#00ff00"
+    android:background="@drawable/bg"
     android:clickable="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/aussentemperatur"
-        android:layout_weight="5"
-        android:background="#00ffff"/>
+        <LinearLayout
+            android:id="@+id/linearTemp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="124dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="10dp">
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="10"
-        android:id="@+id/temperatur_eingabe"
-        android:inputType="number"
-        android:maxLength="3"
-        android:background="#00ffff"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/aussentemperatur"
+                android:alpha="0.5"
+                android:textColor="@color/black"/>
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="@string/c"
-        android:id="@+id/degree_switch"
-        />
+            <EditText
+                android:id="@+id/temperatur_eingabe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:inputType="number"
+                android:maxLength="3" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/degree_switch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/c" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="@+id/linearTemp"
+            app:layout_constraintTop_toTopOf="@+id/linearTemp"
+            android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:alpha="0.5"
+                android:text="@string/relative_luftfeuchtigkeit"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/humidity_eingabe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/string_percent"/>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="212dp"
+            android:layout_marginTop="108dp"
+            android:id="@+id/berechnen"
+            android:text="@string/heat_index_berechnen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearTemp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
