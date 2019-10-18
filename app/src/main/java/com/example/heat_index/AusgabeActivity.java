@@ -21,10 +21,10 @@ public class AusgabeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.eingabe_nav:
-                        break;
                     case R.id.ausgabe_nav:
-                        Intent intent2 = new Intent(AusgabeActivity.this, AusgabeActivity.class);
+                        break;
+                    case R.id.eingabe_nav:
+                        Intent intent2 = new Intent(AusgabeActivity.this, EingabeActivity.class);
                         startActivity(intent2);
                         break;
                     case R.id.verlauf_nav:

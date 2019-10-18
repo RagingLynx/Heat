@@ -21,7 +21,7 @@ public class InfoActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.eingabe_nav:
+                    case R.id.info_nav:
                         break;
                     case R.id.ausgabe_nav:
                         Intent intent2 = new Intent(InfoActivity.this, AusgabeActivity.class);
@@ -31,8 +31,8 @@ public class InfoActivity extends AppCompatActivity {
                         Intent intent3 = new Intent(InfoActivity.this, DatenAnsichtActivity.class);
                         startActivity(intent3);
                         break;
-                    case R.id.info_nav:
-                        Intent intent4 = new Intent(InfoActivity.this, InfoActivity.class);
+                    case R.id.eingabe_nav:
+                        Intent intent4 = new Intent(InfoActivity.this, EingabeActivity.class);
                         startActivity(intent4);
                         break;
                 }

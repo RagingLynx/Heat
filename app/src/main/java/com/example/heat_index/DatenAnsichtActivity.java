@@ -21,14 +21,14 @@ public class DatenAnsichtActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.eingabe_nav:
+                    case R.id.verlauf_nav:
                         break;
                     case R.id.ausgabe_nav:
                         Intent intent2 = new Intent(DatenAnsichtActivity.this, AusgabeActivity.class);
                         startActivity(intent2);
                         break;
-                    case R.id.verlauf_nav:
-                        Intent intent3 = new Intent(DatenAnsichtActivity.this, DatenAnsichtActivity.class);
+                    case R.id.eingabe_nav:
+                        Intent intent3 = new Intent(DatenAnsichtActivity.this, EingabeActivity.class);
                         startActivity(intent3);
                         break;
                     case R.id.info_nav:
