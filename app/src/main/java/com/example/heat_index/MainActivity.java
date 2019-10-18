@@ -1,7 +1,6 @@
 package com.example.heat_index;
 
 import android.os.Bundle;
-import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,7 +10,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 //Noch die Main, sollte aber ausgetauscht werden sobald alle anderen laufen
 public class MainActivity extends AppCompatActivity {
 
-    private FrameLayout frameContainer;
     private Fragment eingabeFrag, ausgabeFrag, infoFrag, verlaufFrag;
 
     @Override
@@ -24,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         infoFrag = new InfoFragment();
         verlaufFrag = new VerlaufFragment();
 
-        frameContainer = findViewById(R.id.frame_container);
-
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
                 eingabeFrag).commit();
         setTitle(R.string.heat_index_berechnen);
@@ -35,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    //sorgt dafür dass das richtige Fragment angesprochen wird
+    //setzt den Titel der App dementsprechend
     private BottomNavigationView.OnNavigationItemSelectedListener navbarListener =
             menuItem -> {
-                Fragment selectedFrag = null;
+                Fragment selectedFrag;
                 switch (menuItem.getItemId()) {
                     case R.id.eingabe_nav:
                         selectedFrag = eingabeFrag;
@@ -56,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         selectedFrag = infoFrag;
                         setTitle(R.string.info_title);
                         break;
+                    default: selectedFrag = eingabeFrag;
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
