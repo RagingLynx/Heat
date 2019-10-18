@@ -14,4 +14,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ergebnis_title">Ergebnis</string>
+    <string name="verlauf_title">Verlauf</string>
+    <string name="info_title">Info</string>
 </resources>
