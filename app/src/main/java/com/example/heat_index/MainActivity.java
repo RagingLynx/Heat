@@ -81,14 +81,13 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onEingabeSent(String temp, String humidity, boolean isFahrenheit) {
-        this.temp = Double.parseDouble(temp);
-        this.humidity = Integer.parseInt(humidity);
+    public void onEingabeSent(Weather w) {
+
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
                 ausgabeFrag).commit();
         botNav.setSelectedItemId(R.id.ausgabe_nav);
 
-        ((AusgabeFragment)ausgabeFrag).sendToTextView(new Weather(this.temp, this.humidity, isFahrenheit));
+        ((AusgabeFragment)ausgabeFrag).sendToTextView(w);
 
         //Fokussieren des Ausgabefragments nach Bestätigung der Eingabe
 

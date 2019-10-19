@@ -1,6 +1,7 @@
 package com.example.heat_index;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +21,11 @@ public class EingabeFragment extends Fragment {
     private boolean isFahrenheit = false;
     private Button berechnen;
     private EingabeFragmentListener listener;
+    private WeatherDao dao;
+    private Weather weather;
 
     public interface EingabeFragmentListener {
-        void onEingabeSent(String temp, String humidity, boolean isFahrenheit);
+        void onEingabeSent(Weather w);
     }
 
 
@@ -30,6 +33,8 @@ public class EingabeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_eingabe, container, false);
+
+        dao = WeatherRoomDatabase.getDatabase(getActivity()).weatherDao();
 
         temp_text = view.findViewById(R.id.temperatur_eingabe);
         humidity_text = view.findViewById(R.id.humidity_eingabe);
@@ -50,11 +55,18 @@ public class EingabeFragment extends Fragment {
                 System.out.println("feld leer");
                 return;
             }
+            weather = new Weather(Double.parseDouble(temperatur), Integer.parseInt(feuchtigkeit),
+                    isFahrenheit);
+            listener.onEingabeSent(weather);
 
-            listener.onEingabeSent(temperatur, feuchtigkeit, isFahrenheit);
+            saveWeatherOnClick();
         });
 
         return view;
+    }
+
+    private void saveWeatherOnClick(){
+        new SpeichernTask().execute(weather);
     }
 
     @Override
@@ -73,6 +85,21 @@ public class EingabeFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         listener = null;
+
+    }
+
+    public class SpeichernTask extends AsyncTask<Weather, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Weather... weathers){
+            dao.insert(weathers[0]);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
 
     }
 
