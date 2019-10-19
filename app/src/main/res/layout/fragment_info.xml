@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".InfoFragment"
     android:clickable="true"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/bgn">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
