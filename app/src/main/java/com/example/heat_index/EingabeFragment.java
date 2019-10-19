@@ -30,10 +30,12 @@ public class EingabeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_eingabe, container, false);
+
         temp_text = view.findViewById(R.id.temperatur_eingabe);
         humidity_text = view.findViewById(R.id.humidity_eingabe);
         degreeSwitch = view.findViewById(R.id.degree_switch);
 
+        degreeSwitch.setText(isFahrenheit ? R.string.f : R.string.c);
         degreeSwitch.setOnClickListener(e -> {
             degreeSwitch.setText(isFahrenheit ? R.string.c : R.string.f);
             isFahrenheit = !isFahrenheit;
@@ -50,8 +52,6 @@ public class EingabeFragment extends Fragment {
             }
 
             listener.onEingabeSent(temperatur, feuchtigkeit, isFahrenheit);
-            System.out.println("temp: " + temperatur + "\n humid: " + feuchtigkeit );
-
         });
 
         return view;
@@ -75,5 +75,6 @@ public class EingabeFragment extends Fragment {
         listener = null;
 
     }
+
 
 }

@@ -2,6 +2,7 @@ package com.example.heat_index;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -91,6 +92,11 @@ public class MainActivity extends AppCompatActivity
 
         //Fokussieren des Ausgabefragments nach Bestätigung der Eingabe
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 }
 

@@ -1,5 +1,7 @@
 package com.example.heat_index;
 
+import java.math.BigDecimal;
+
 public class Weather {
 
     private double temp;
@@ -39,7 +41,6 @@ public class Weather {
         this.isFahrenheit = isFahrenheit;
 
         calculate(temp, humidity);
-        System.out.println("" + heatIndex);
     }
 
 
@@ -74,7 +75,12 @@ public class Weather {
                     0.00085282 * temp * Math.pow(humidity,2) -
                     0.00000199 * Math.pow(temp,2) * Math.pow(humidity,2);
         }
+
+        //Rundet den errechneten Wert auf eine Nachkommastelle
+        heatIndex *= 10;
+        heatIndex = Math.round(heatIndex) / 10.0;
     }
+
 
 
 }

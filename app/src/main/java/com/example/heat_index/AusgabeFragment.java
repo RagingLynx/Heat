@@ -24,10 +24,11 @@ public class AusgabeFragment extends Fragment {
         ergebnisTextView = view.findViewById(R.id.ausgabe_ergebnis);
 
         if(weather != null){
-            tempTextView.setText("" + weather.getTemp());
+            tempTextView.setText("" + weather.getTemp() + (weather.getIsFahrenheit() ?
+                    getString(R.string.f) : getString((R.string.c))));
             humidityTextView.setText("" + weather.getHumidity());
-            ergebnisTextView.setText("" + weather.getHeatIndex() +
-                    (weather.getIsFahrenheit() ? R.string.f : R.string.c));
+            ergebnisTextView.setText("" + weather.getHeatIndex() + (weather.getIsFahrenheit() ?
+                    getString(R.string.f) : getString((R.string.c))));
         }
         return view;
     }
