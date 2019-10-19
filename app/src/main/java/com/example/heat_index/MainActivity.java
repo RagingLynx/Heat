@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity
     private double temp;
     private int humidity;
     private boolean isFahrenheit;
-    BottomNavigationView botNav;
+    private BottomNavigationView botNav;
 
 
     @Override

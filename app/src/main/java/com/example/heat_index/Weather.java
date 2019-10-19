@@ -1,9 +1,14 @@
 package com.example.heat_index;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.math.BigDecimal;
 
+@Entity
 public class Weather {
-
+    @PrimaryKey(autoGenerate = true;)
+    private int id;
     private double temp;
     private int humdity;
     private double heatIndex;
