@@ -1,12 +1,12 @@
 package com.example.heat_index;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,9 +17,13 @@ public class EingabeFragment extends Fragment {
     private Button degreeSwitch;
     private EditText temp_text;
     private EditText humidity_text;
-    private boolean fahrenheit = false;
+    private boolean isFahrenheit = false;
     private Button berechnen;
+    private EingabeFragmentListener listener;
 
+    public interface EingabeFragmentListener {
+        void onEingabeSent(String temp, String humidity, boolean isFahrenheit);
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -29,8 +33,8 @@ public class EingabeFragment extends Fragment {
         degreeSwitch = view.findViewById(R.id.degree_switch);
 
         degreeSwitch.setOnClickListener(e -> {
-            degreeSwitch.setText(fahrenheit ? R.string.c : R.string.f);
-            fahrenheit = !fahrenheit;
+            degreeSwitch.setText(isFahrenheit ? R.string.c : R.string.f);
+            isFahrenheit = !isFahrenheit;
         });
 
         berechnen = view.findViewById(R.id.berechnen);
@@ -43,11 +47,31 @@ public class EingabeFragment extends Fragment {
                 return;
             }
 
-            double temp = Double.parseDouble(temperatur);
-            Integer humidity = Integer.parseInt(feuchtigkeit);
-            System.out.println("temp: " + temp + "\n humid: " + humidity );
+            listener.onEingabeSent(temperatur, feuchtigkeit, isFahrenheit);
+            System.out.println("temp: " + temperatur + "\n humid: " + feuchtigkeit );
+
         });
 
         return view;
     }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        if(context instanceof EingabeFragmentListener){
+            listener = (EingabeFragmentListener)context;
+        }
+        else{
+            throw new RuntimeException(context.toString() +
+                    " must implement EingabeFragmentListener");
+        }
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
+
+
 }

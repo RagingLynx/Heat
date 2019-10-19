@@ -7,14 +7,33 @@
     android:background="@color/colorPrimary"
     android:clickable="true">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ErsteSeitetest"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:id="@+id/testtext"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aussentemperatur"
+            android:textSize="20dp"
+            android:id="@+id/ausgabe_eingegebene_temp"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/relative_luftfeuchtigkeit"
+            android:textSize="20dp"
+            android:id="@+id/ausgabe_eingegebene_humidity"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ergebnis"
+            android:textSize="20dp"
+            android:id="@+id/ausgabe_ergebnis"
+            />
+    </LinearLayout>
 
 </FrameLayout>

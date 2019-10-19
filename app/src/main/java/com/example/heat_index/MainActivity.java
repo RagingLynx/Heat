@@ -7,28 +7,35 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-//Noch die Main, sollte aber ausgetauscht werden sobald alle anderen laufen
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements EingabeFragment.EingabeFragmentListener{
 
     private Fragment eingabeFrag, ausgabeFrag, infoFrag, verlaufFrag;
+    private double temp;
+    private int humidity;
+    private boolean isFahrenheit;
+    BottomNavigationView botNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Einzelne Fragmente auf die zugegriffen werden soll
         eingabeFrag = new EingabeFragment();
         ausgabeFrag = new AusgabeFragment();
         infoFrag = new InfoFragment();
         verlaufFrag = new VerlaufFragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
-                eingabeFrag).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frame_container, eingabeFrag)
+                .commit();
         setTitle(R.string.heat_index_berechnen);
-        BottomNavigationView botNav = findViewById(R.id.bottom_bar);
+        botNav = findViewById(R.id.bottom_bar);
         botNav.setOnNavigationItemSelectedListener(navbarListener);
 
     }
+
 
 
     //sorgt dafür dass das richtige Fragment angesprochen wird
@@ -61,5 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             };
 
+
+    @Override
+    public void onEingabeSent(String temp, String humidity, boolean isFahrenheit) {
+        this.temp = Double.parseDouble(temp);
+        this.humidity = Integer.parseInt(humidity);
+        ((AusgabeFragment)ausgabeFrag).sendToTextView(new Weather(this.temp, this.humidity, isFahrenheit));
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
+                ausgabeFrag).commit();
+        botNav.setSelectedItemId(R.id.ausgabe_nav);
+
+    }
 }
 

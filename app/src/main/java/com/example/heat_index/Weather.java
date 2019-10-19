@@ -1,8 +1,9 @@
 package com.example.heat_index;
 
 public class Weather {
+
     private double temp;
-    private double humdity;
+    private int humdity;
     private double heatIndex;
     private boolean isFahrenheit;
 
@@ -14,18 +15,31 @@ public class Weather {
         return heatIndex;
     }
 
+    public double getTemp() {
+        return temp;
+    }
+
+    public int getHumidity() {
+        return humdity;
+    }
+
+    public boolean getIsFahrenheit() {
+        return isFahrenheit;
+    }
+
     /**
      * Constructs an instance of Weather and calculates the heatIndex
      * @param temp the outside temperature as given by the user
      * @param humidity the relative humidity as given by the user
      * @param isFahrenheit determines whether or not the user used Fahrenheit for the Temperature
      */
-    public Weather(double temp, double humidity, boolean isFahrenheit){
+    public Weather(double temp, int humidity, boolean isFahrenheit){
         this.humdity = humidity;
         this.temp = temp;
         this.isFahrenheit = isFahrenheit;
 
         calculate(temp, humidity);
+        System.out.println("" + heatIndex);
     }
 
 
