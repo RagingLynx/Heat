@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EingabeFragment"
-    android:background="@drawable/bg"
+    android:background="@drawable/bgn"
     android:clickable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,12 +22,13 @@
             android:layout_marginHorizontal="10dp">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="92dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_weight="8"
+                android:alpha="0.8"
                 android:text="@string/aussentemperatur"
-                android:alpha="0.5"
-                android:textColor="@color/black"/>
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/temperatur_eingabe"
@@ -41,7 +42,7 @@
                 android:id="@+id/degree_switch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:text="@string/c" />
 
         </LinearLayout>
@@ -55,12 +56,13 @@
             android:layout_marginHorizontal="10dp">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:alpha="0.5"
+                android:layout_width="99dp"
+                android:layout_height="59dp"
+                android:layout_weight="8"
+                android:alpha="0.8"
                 android:text="@string/relative_luftfeuchtigkeit"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/humidity_eingabe"
@@ -73,7 +75,7 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:text="@string/string_percent"/>
 
 
