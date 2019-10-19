@@ -1,6 +1,5 @@
 package com.example.heat_index;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
-
 public class AusgabeFragment extends Fragment {
     private TextView tempTextView, humidityTextView, ergebnisTextView;
-
+    private Weather weather;
 
     @Nullable
     @Override
@@ -25,14 +23,17 @@ public class AusgabeFragment extends Fragment {
         humidityTextView = view.findViewById(R.id.ausgabe_eingegebene_humidity);
         ergebnisTextView = view.findViewById(R.id.ausgabe_ergebnis);
 
+        if(weather != null){
+            tempTextView.setText("" + weather.getTemp());
+            humidityTextView.setText("" + weather.getHumidity());
+            ergebnisTextView.setText("" + weather.getHeatIndex() +
+                    (weather.getIsFahrenheit() ? R.string.f : R.string.c));
+        }
         return view;
     }
 
     public void sendToTextView(Weather weather){
-        tempTextView.setText("" + weather.getTemp());
-        humidityTextView.setText("" + weather.getHumidity());
-        ergebnisTextView.setText("" + weather.getHeatIndex() +
-                (weather.getIsFahrenheit() ? R.string.f : R.string.c));
+        this.weather = weather;
     }
 
 }

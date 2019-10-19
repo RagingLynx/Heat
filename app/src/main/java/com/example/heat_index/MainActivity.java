@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -16,10 +17,15 @@ public class MainActivity extends AppCompatActivity
     private boolean isFahrenheit;
     BottomNavigationView botNav;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(savedInstanceState != null) {
+            onRestoreInstanceState(savedInstanceState);
+        }
         setContentView(R.layout.activity_main);
+
 
         //Einzelne Fragmente auf die zugegriffen werden soll
         eingabeFrag = new EingabeFragment();
@@ -68,15 +74,22 @@ public class MainActivity extends AppCompatActivity
                 return true;
             };
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     @Override
     public void onEingabeSent(String temp, String humidity, boolean isFahrenheit) {
         this.temp = Double.parseDouble(temp);
         this.humidity = Integer.parseInt(humidity);
-        ((AusgabeFragment)ausgabeFrag).sendToTextView(new Weather(this.temp, this.humidity, isFahrenheit));
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
                 ausgabeFrag).commit();
         botNav.setSelectedItemId(R.id.ausgabe_nav);
+
+        ((AusgabeFragment)ausgabeFrag).sendToTextView(new Weather(this.temp, this.humidity, isFahrenheit));
+
+        //Fokussieren des Ausgabefragments nach Bestätigung der Eingabe
 
     }
 }

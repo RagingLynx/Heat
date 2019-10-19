@@ -25,8 +25,10 @@ public class EingabeFragment extends Fragment {
         void onEingabeSent(String temp, String humidity, boolean isFahrenheit);
     }
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_eingabe, container, false);
         temp_text = view.findViewById(R.id.temperatur_eingabe);
         humidity_text = view.findViewById(R.id.humidity_eingabe);
@@ -71,7 +73,7 @@ public class EingabeFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         listener = null;
-    }
 
+    }
 
 }
