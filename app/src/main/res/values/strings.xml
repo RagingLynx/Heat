@@ -17,4 +17,5 @@
     <string name="ergebnis_title">Ergebnis</string>
     <string name="verlauf_title">Verlauf</string>
     <string name="info_title">Info</string>
+    <string name="heat_index">Heat-Index:</string>
 </resources>
