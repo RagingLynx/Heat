@@ -74,6 +74,15 @@
             android:id="@+id/heat_text"
             android:textSize="20dp"/>
 
+        <ImageButton
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:layout_gravity="right"
+            />
     </LinearLayout>
+
+
 
 </LinearLayout>

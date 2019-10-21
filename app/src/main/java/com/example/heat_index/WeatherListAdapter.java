@@ -3,6 +3,7 @@ package com.example.heat_index;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,8 +38,9 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         //hier einfach alle Views aufführen und setzen die zur Darstellung gebraucht werden
         TextView heatText = holder.itemView.findViewById(R.id.heat_text);
+        ImageButton delbutton = holder.itemView.findViewById(R.id.delete_button);
         heatText.setText("" + weathers.get(position).getHeatIndex());
-        heatText.setOnClickListener((view) -> {
+        delbutton.setOnClickListener((view) -> {
             new DeleteWeatherTask(dao, this).execute(weathers.get(position));
         });
     }
