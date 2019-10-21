@@ -1,13 +1,18 @@
 package com.example.heat_index;
 
-import java.math.BigDecimal;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity
 public class Weather {
-
-    private double temp;
-    private int humdity;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    private final double temp;
+    private final int humidity;
     private double heatIndex;
-    private boolean isFahrenheit;
+    private final boolean isFahrenheit;
+
+
 
     /**
      *
@@ -17,17 +22,31 @@ public class Weather {
         return heatIndex;
     }
 
+    public void setHeatIndex(double heatIndex){
+        this.heatIndex = heatIndex;
+    }
+
     public double getTemp() {
         return temp;
     }
 
     public int getHumidity() {
-        return humdity;
+        return humidity;
     }
 
     public boolean getIsFahrenheit() {
         return isFahrenheit;
     }
+
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
 
     /**
      * Constructs an instance of Weather and calculates the heatIndex
@@ -36,7 +55,7 @@ public class Weather {
      * @param isFahrenheit determines whether or not the user used Fahrenheit for the Temperature
      */
     public Weather(double temp, int humidity, boolean isFahrenheit){
-        this.humdity = humidity;
+        this.humidity = humidity;
         this.temp = temp;
         this.isFahrenheit = isFahrenheit;
 
