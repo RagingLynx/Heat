@@ -27,7 +27,7 @@ public class VerlaufFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_verlauf, container, false);
 
 
-        wAdapter = new WeatherListAdapter();
+        wAdapter = new WeatherListAdapter(dao);
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);

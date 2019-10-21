@@ -13,9 +13,12 @@ import java.util.List;
 
 public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Weather> weathers = Collections.emptyList();
-
-    WeatherListAdapter(){
+    private final WeatherDao dao;
+    public WeatherListAdapter(WeatherDao dao){
+        this.dao = dao;
     }
+
+
 
     public void setWeathers(List<Weather> weathers){
         this.weathers = weathers;
@@ -35,7 +38,9 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         //hier einfach alle Views aufführen und setzen die zur Darstellung gebraucht werden
         TextView heatText = holder.itemView.findViewById(R.id.heat_text);
         heatText.setText("" + weathers.get(position).getHeatIndex());
-
+        heatText.setOnClickListener((view) -> {
+            new DeleteWeatherTask(dao, this).execute(weathers.get(position));
+        });
     }
 
     @Override
