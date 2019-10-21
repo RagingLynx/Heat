@@ -3,6 +3,8 @@ package com.example.heat_index;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Date;
+
 @Entity
 public class Weather {
     @PrimaryKey(autoGenerate = true)

@@ -8,11 +8,14 @@
     android:background="@drawable/bgn">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="thisisthefourthtest"
-        android:textSize="20dp"
-        android:gravity="center"/>
+        android:id="@+id/recycler_view"
+        tools:listitem="@layout/weather_list_item"
+
+
+        />
 
 </FrameLayout>

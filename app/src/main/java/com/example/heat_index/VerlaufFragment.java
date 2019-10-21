@@ -9,19 +9,31 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 
 public class VerlaufFragment extends Fragment {
     private WeatherDao dao;
+    RecyclerView recyclerView;
+    WeatherListAdapter wAdapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         dao = WeatherRoomDatabase.getDatabase(getActivity()).weatherDao();
-        return inflater.inflate(R.layout.fragment_verlauf, container, false);
+        View view = inflater.inflate(R.layout.fragment_verlauf, container, false);
 
+
+        wAdapter = new WeatherListAdapter();
+        recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(wAdapter);
+
+        return view;
     }
 
     @Override
@@ -40,6 +52,7 @@ public class VerlaufFragment extends Fragment {
         @Override
         protected void onPostExecute(List<Weather> weathers) {
             super.onPostExecute(weathers);
+            wAdapter.setWeathers(weathers);
             for (Weather weather : weathers) {
                 System.out.println(weather.getHeatIndex() + (weather.getIsFahrenheit() ?
                         getString(R.string.f) : getString(R.string.c)));
