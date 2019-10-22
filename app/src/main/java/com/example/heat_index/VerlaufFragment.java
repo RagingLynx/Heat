@@ -53,10 +53,6 @@ public class VerlaufFragment extends Fragment {
         protected void onPostExecute(List<Weather> weathers) {
             super.onPostExecute(weathers);
             wAdapter.setWeathers(weathers);
-            for (Weather weather : weathers) {
-                System.out.println(weather.getHeatIndex() + (weather.getIsFahrenheit() ?
-                        getString(R.string.f) : getString(R.string.c)));
-            }
         }
 
 
