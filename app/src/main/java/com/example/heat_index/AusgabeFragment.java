@@ -30,10 +30,13 @@ public class AusgabeFragment extends Fragment {
         heatView = view.findViewById(R.id.heatInfo);
 
         if(weather != null){
-            tempTextView.setText("Außentemperatur: " + weather.getTemp() + (weather.getIsFahrenheit() ?
+            tempTextView.setText(getString(R.string.außentemp) + weather.getTemp()
+                    + (weather.getIsFahrenheit() ?
                     getString(R.string.f) : getString((R.string.c))));
-            humidityTextView.setText("relative Luftfeuchtigkeit: " + weather.getHumidity() + " %");
-            ergebnisTextView.setText("Der HeatIndex beträgt \n" + weather.getHeatIndex() + (weather.getIsFahrenheit() ?
+            humidityTextView.setText(getString(R.string.relative_luftfeuchtigkeit)
+                    + weather.getHumidity() + getString(R.string.string_percent));
+            ergebnisTextView.setText(getString(R.string.indexBetraegt) + "\n"
+                    + weather.getHeatIndex() + (weather.getIsFahrenheit() ?
                     getString(R.string.f) : getString((R.string.c))));
             if(weather.getHeatIndex() >54) heatView.setText(w4);
             else if(weather.getHeatIndex() > 40) heatView.setText(w3);

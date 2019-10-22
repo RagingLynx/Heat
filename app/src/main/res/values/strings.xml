@@ -4,9 +4,9 @@
     <string name="second_page_name">Verlauf</string>
     <string name="third_page_name">Info</string>
     <string name="eingabe">Eingabe</string>
-    <string name="außentemp">Außentemperatur</string>
+    <string name="außentemp">Außentemperatur:</string>
     <string name="c">°C</string>
-    <string name="relative_luftfeuchtigkeit">relative Luftfeuchtigkeit</string>
+    <string name="relative_luftfeuchtigkeit">relative Luftfeuchtigkeit:</string>
     <string name="string_percent">%</string>
     <string name="heat_index_berechnen">Hitze-Index berechnen</string>
     <string name="ergebnis">HeatIndex</string>
@@ -18,4 +18,6 @@
     <string name="verlauf_title">Verlauf</string>
     <string name="info_title">Info</string>
     <string name="heat_index">Heat-Index:</string>
+    <string name="emptyString" />
+    <string name="indexBetraegt">Der HeatIndex beträgt</string>
 </resources>

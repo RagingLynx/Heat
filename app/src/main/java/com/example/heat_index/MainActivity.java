@@ -83,13 +83,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onEingabeSent(Weather w) {
 
+        //Fokussieren des Ausgabefragments nach Bestätigung der Eingabe
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
                 ausgabeFrag).commit();
         botNav.setSelectedItemId(R.id.ausgabe_nav);
 
         ((AusgabeFragment)ausgabeFrag).sendToTextView(w);
 
-        //Fokussieren des Ausgabefragments nach Bestätigung der Eingabe
+
 
     }
 
