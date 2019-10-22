@@ -4,7 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FAFAFA</color>
+    <color name="transwhite">#CCF0F0F0</color>
     <color name="black">#000000</color>
-    <color name="darkorange">#FF8C00</color>
+    <color name="transpdarkorange">#CCFF8C00</color>
     <color name="darkgrey">#676767</color>
 </resources>
