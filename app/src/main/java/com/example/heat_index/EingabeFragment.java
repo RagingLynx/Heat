@@ -65,7 +65,7 @@ public class EingabeFragment extends Fragment {
                 int humid = Integer.parseInt(feuchtigkeit);
 
                 if ((humid < 0 || humid > 100) && ((!isFahrenheit && (temper < 27 || temper > 43)))
-                        || isFahrenheit && (temper < 80 || temper > 110)) {
+                        || (isFahrenheit && (temper < 80 || temper > 110))) {
                     Toast.makeText(getContext(),
                             "Temperatur muss zwischen 27 und 43°C bzw 80 und 110°F liegen, und Luftfeuchtigkeit zwischen 0 und 100%!",
                             Toast.LENGTH_LONG)
@@ -78,6 +78,12 @@ public class EingabeFragment extends Fragment {
                 } else if (!isFahrenheit && (temper < 27 || temper > 43)) {
                     Toast.makeText(getContext(),
                             "Der Heat Index kann nur für Temperaturen zwischen 27 und 43°C berechnet werden",
+                            Toast.LENGTH_LONG)
+                            .show();
+                }
+                else if (isFahrenheit && (temper < 80 || temper > 110)){
+                    Toast.makeText(getContext(),
+                            "Der Heat Index kann nur für Temperaturen zwischen 80 und 110°F berechnet werden",
                             Toast.LENGTH_LONG)
                             .show();
                 } else {
