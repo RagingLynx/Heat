@@ -17,8 +17,8 @@ public class AusgabeFragment extends Fragment {
 
     private String w1 = "Vorsicht – Bei längeren Zeiträumen und körperlicher Aktivität kann es zu Erschöpfungserscheinungen kommen.",
                    w2 = "Erhöhte Vorsicht – Es besteht die Möglichkeit von Hitzeschäden wie Sonnenstich, Hitzekrampf und Hitzekollaps.",
-                    w3= "Gefahr – Sonnenstich, Hitzekrampf und Hitzekollaps sind wahrscheinlich; Hitzschlag ist möglich.",
-                   w4= "Erhöhte Gefahr – Hitzschlag und Sonnenstich sind wahrscheinlich.";
+                    w3 = "Gefahr – Sonnenstich, Hitzekrampf und Hitzekollaps sind wahrscheinlich; Hitzschlag ist möglich.",
+                   w4 = "Erhöhte Gefahr – Hitzschlag und Sonnenstich sind wahrscheinlich.";
 
     @Nullable
     @Override
@@ -50,7 +50,7 @@ public class AusgabeFragment extends Fragment {
         return view;
     }
 
-    public void sendToTextView(Weather weather){
+    void sendToTextView(Weather weather){
         this.weather = weather;
     }
 

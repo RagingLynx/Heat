@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -13,9 +12,6 @@ public class MainActivity extends AppCompatActivity
         implements EingabeFragment.EingabeFragmentListener{
 
     private Fragment eingabeFrag, ausgabeFrag, infoFrag, verlaufFrag;
-    private double temp;
-    private int humidity;
-    private boolean isFahrenheit;
     private BottomNavigationView botNav;
 
 
@@ -40,7 +36,6 @@ public class MainActivity extends AppCompatActivity
         setTitle(R.string.heat_index_berechnen);
         botNav = findViewById(R.id.bottom_bar);
         botNav.setOnNavigationItemSelectedListener(navbarListener);
-
     }
 
 

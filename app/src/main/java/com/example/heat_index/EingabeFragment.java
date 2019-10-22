@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -51,15 +52,41 @@ public class EingabeFragment extends Fragment {
             String temperatur = temp_text.getText().toString();
             String feuchtigkeit = humidity_text.getText().toString();
 
-            if(temperatur.equals("") || feuchtigkeit.equals("")) {
-                System.out.println("feld leer");
-                return;
-            }
-            weather = new Weather(Double.parseDouble(temperatur), Integer.parseInt(feuchtigkeit),
-                    isFahrenheit);
-            listener.onEingabeSent(weather);
 
-            saveWeatherOnClick();
+            if(temperatur.equals("") || feuchtigkeit.equals("")) {
+                Toast.makeText(getContext(),
+                        "Bitte alle Felder ausfüllen",
+                        Toast.LENGTH_LONG)
+                        .show();
+            }
+
+            else {
+                double temper = Double.parseDouble(temperatur);
+                int humid = Integer.parseInt(feuchtigkeit);
+
+                if ((humid < 0 || humid > 100) && ((!isFahrenheit && (temper < 27 || temper > 43)))
+                        || isFahrenheit && (temper < 80 || temper > 110)) {
+                    Toast.makeText(getContext(),
+                            "Temperatur muss zwischen 27 und 43°C bzw 80 und 110°F liegen, und Luftfeuchtigkeit zwischen 0 und 100%!",
+                            Toast.LENGTH_LONG)
+                            .show();
+
+                } else if (humid < 0 || humid > 100) {
+                    Toast.makeText(getContext(),
+                            "Luftfeuchtigkeit muss zwischen 0 und 100% liegen", Toast.LENGTH_LONG)
+                            .show();
+                } else if (!isFahrenheit && (temper < 27 || temper > 43)) {
+                    Toast.makeText(getContext(),
+                            "Der Heat Index kann nur für Temperaturen zwischen 27 und 43°C berechnet werden",
+                            Toast.LENGTH_LONG)
+                            .show();
+                } else {
+                    weather = new Weather(temper, humid, isFahrenheit);
+                    listener.onEingabeSent(weather);
+
+                    saveWeatherOnClick();
+                }
+            }
         });
 
         return view;
