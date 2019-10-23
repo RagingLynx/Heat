@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/first_page_name"
+    <item android:title="@string/eingabe"
         android:icon="@drawable/ic_wb_sunny_black_24dp"
         android:id="@+id/eingabe_nav"/>
     <item android:title="@string/ergebnis"
         android:icon="@drawable/ic_pool_black_24dp"
         android:id="@+id/ausgabe_nav"/>
-    <item android:title="@string/second_page_name"
+    <item android:title="@string/verlauf_title"
         android:icon="@drawable/ic_history"
         android:id="@+id/verlauf_nav"/>
-    <item android:title="@string/third_page_name"
+    <item android:title="@string/info_title"
         android:icon="@drawable/ic_info"
         android:id="@+id/info_nav"/>
 
