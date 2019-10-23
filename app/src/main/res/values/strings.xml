@@ -20,6 +20,10 @@
     <string name="löschen_title">Löschen</string>
     <string name="abbruch_auswahl">Abbrechen</string>
     <string name="ja_auswahl">Ja</string>
+    <string name="warnung_1">Vorsicht – Bei längeren Zeiträumen und körperlicher Aktivität kann es zu Erschöpfungserscheinungen kommen.</string>
+    <string name="warnung_2">Erhöhte Vorsicht – Es besteht die Möglichkeit von Hitzeschäden wie Sonnenstich, Hitzekrampf und Hitzekollaps.</string>
+    <string name="warnung_3">Gefahr – Sonnenstich, Hitzekrampf und Hitzekollaps sind wahrscheinlich; Hitzschlag ist möglich.</string>
+    <string name="warnung_4">Erhöhte Gefahr – Hitzschlag und Sonnenstich sind wahrscheinlich.</string>
 
 
 </resources>

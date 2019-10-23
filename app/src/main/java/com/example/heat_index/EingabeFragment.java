@@ -20,7 +20,6 @@ public class EingabeFragment extends Fragment {
     private EditText temp_text;
     private EditText humidity_text;
     private boolean isFahrenheit = false;
-    private Button berechnen;
     private EingabeFragmentListener listener;
     private WeatherDao dao;
     private Weather weather;
@@ -47,7 +46,7 @@ public class EingabeFragment extends Fragment {
             isFahrenheit = !isFahrenheit;
         });
 
-        berechnen = view.findViewById(R.id.berechnen);
+        Button berechnen = view.findViewById(R.id.berechnen);
         berechnen.setOnClickListener(click -> {
             String temperatur = temp_text.getText().toString();
             String feuchtigkeit = humidity_text.getText().toString();
