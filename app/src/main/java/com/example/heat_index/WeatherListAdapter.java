@@ -1,5 +1,6 @@
 package com.example.heat_index;
 
+import android.app.AlertDialog;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,21 +48,27 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         ImageButton delbutton = holder.itemView.findViewById(R.id.delete_button);
         Weather aktuellesWeather = weathers.get(position);
 
-        aussentempText.setText(res.getString(R.string.emptyString) + aktuellesWeather.getTemp() +
+        aussentempText.setText((aktuellesWeather.getTemp() +
                 (aktuellesWeather.getIsFahrenheit() ?
-                        res.getString(R.string.f) : res.getString(R.string.c)));
-        luftfeuchtText.setText(res.getString(R.string.emptyString) + aktuellesWeather.getHumidity()
-                + res.getString(R.string.string_percent));
-        heatText.setText(res.getString(R.string.emptyString) + aktuellesWeather.getHeatIndex() +
+                        res.getString(R.string.f) : res.getString(R.string.c))));
+        luftfeuchtText.setText((aktuellesWeather.getHumidity()
+                + res.getString(R.string.string_percent)));
+        heatText.setText((aktuellesWeather.getHeatIndex() +
                 (aktuellesWeather.getIsFahrenheit() ?
-                        res.getString(R.string.f) : res.getString(R.string.c)));
+                        res.getString(R.string.f) : res.getString(R.string.c))));
 
 
 
 
         delbutton.setOnClickListener((view) -> {
-
-            new DeleteWeatherTask(dao, this).execute(weathers.get(position));
+            String jaString = holder.itemView.getResources().getString(R.string.ja_auswahl);
+            new AlertDialog.Builder(holder.itemView.getContext())
+                    .setTitle(R.string.löschen_title)
+                    .setMessage(R.string.eintrag_löschen_frage)
+                    .setPositiveButton(jaString, (a, b) ->
+                            new DeleteWeatherTask(dao, this).execute(weathers.get(position)))
+                    .setNegativeButton(R.string.abbruch_auswahl, null)
+                    .show();
         });
     }
 

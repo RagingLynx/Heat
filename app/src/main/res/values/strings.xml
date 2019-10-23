@@ -20,4 +20,8 @@
     <string name="heat_index">Heat-Index:</string>
     <string name="emptyString" />
     <string name="indexBetraegt">Der HeatIndex beträgt</string>
+    <string name="eintrag_löschen_frage">Wollen sie diesen Eintrag wirklich löschen?</string>
+    <string name="löschen_title">Löschen</string>
+    <string name="abbruch_auswahl">Abbrechen</string>
+    <string name="ja_auswahl">Ja</string>
 </resources>

@@ -11,13 +11,13 @@ import java.util.List;
 @Dao
 public interface WeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insert(Weather weather);
+    void insert(Weather weather);
 
     @Query("SELECT * FROM Weather")
-    public List<Weather> getAll();
+    List<Weather> getAll();
 
     @Delete
-    public void delete(Weather weather);
+    void delete(Weather weather);
 
 
 }

@@ -1,5 +1,4 @@
 package com.example.heat_index;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,8 +16,7 @@ import java.util.List;
 
 public class VerlaufFragment extends Fragment {
     private WeatherDao dao;
-    RecyclerView recyclerView;
-    WeatherListAdapter wAdapter;
+    private WeatherListAdapter wAdapter;
 
     @Nullable
     @Override
@@ -28,7 +26,7 @@ public class VerlaufFragment extends Fragment {
 
 
         wAdapter = new WeatherListAdapter(dao);
-        recyclerView = view.findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(wAdapter);
