@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class WeatherViewHolder extends RecyclerView.ViewHolder {
-    public WeatherViewHolder(@NonNull View itemView){
+    WeatherViewHolder(@NonNull View itemView){
         super(itemView);
     }
 }

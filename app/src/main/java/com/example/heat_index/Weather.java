@@ -69,7 +69,6 @@ public class Weather {
      * Method that calculates the heat-index in Celsius
      * @param temp actual temperature in Celsius or Fahrenheit
      * @param humidity humidity in percent
-     * @return returns the heat-index in °C or °F depending on input
      */
     private void calculate(double temp, double humidity){
         if(!isFahrenheit) {

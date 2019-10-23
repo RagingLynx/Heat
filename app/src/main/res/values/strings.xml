@@ -1,23 +1,25 @@
 <resources>
     <string name="app_name">HeatIndex</string>
-    <string name="first_page_name">Eingabe</string>
-    <string name="second_page_name">Verlauf</string>
-    <string name="third_page_name">Info</string>
     <string name="eingabe">Eingabe</string>
     <string name="außentemp">Außentemperatur:</string>
-    <string name="c">°C</string>
     <string name="relative_luftfeuchtigkeit">relative Luftfeuchtigkeit: </string>
-    <string name="string_percent">%</string>
     <string name="heat_index_berechnen">Hitze-Index berechnen</string>
     <string name="ergebnis">HeatIndex</string>
-    <string name="f">°F</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ergebnis_title">Ergebnis</string>
     <string name="verlauf_title">Verlauf</string>
     <string name="info_title">Info</string>
-    <string name="heat_index">Heat-Index:</string>
-    <string name="emptyString" />
     <string name="indexBetraegt">Der HeatIndex beträgt</string>
+
+    <!-- Einheiten -->
+    <string name="c">°C</string>
+    <string name="f">°F</string>
+    <string name="string_percent">%</string>
+
+    <!--Alertdialog Löschen -->
+    <string name="eintrag_löschen_frage">Wollen sie diesen Eintrag wirklich löschen?</string>
+    <string name="löschen_title">Löschen</string>
+    <string name="abbruch_auswahl">Abbrechen</string>
+    <string name="ja_auswahl">Ja</string>
+
+
 </resources>
