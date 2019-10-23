@@ -19,8 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
-            android:text="@string/außentemp"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:layout_marginTop="24dp"/>
 
         <TextView
@@ -28,24 +27,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
-            android:text="@string/relative_luftfeuchtigkeit"
-            android:textSize="18sp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/ausgabe_ergebnis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
-            android:text="@string/app_name"
-            android:textSize="24sp"
-            tools:text="HeatIndex" />
+            android:textSize="24dp"
+            tools:text="HeatIndex"
+            android:text="@string/leere_ausgabeseite_string"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/heatInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
-            android:textSize="24sp"
+            android:textSize="24dp"
             android:layout_marginBottom="24dp"/>
     </LinearLayout>
 

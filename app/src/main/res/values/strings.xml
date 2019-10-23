@@ -24,6 +24,7 @@
     <string name="warnung_2">Erhöhte Vorsicht – Es besteht die Möglichkeit von Hitzeschäden wie Sonnenstich, Hitzekrampf und Hitzekollaps.</string>
     <string name="warnung_3">Gefahr – Sonnenstich, Hitzekrampf und Hitzekollaps sind wahrscheinlich; Hitzschlag ist möglich.</string>
     <string name="warnung_4">Erhöhte Gefahr – Hitzschlag und Sonnenstich sind wahrscheinlich.</string>
+    <string name="leere_ausgabeseite_string">Gehen sie auf Eingabe um einen Heat Index zu berechnen</string>
 
 
 </resources>

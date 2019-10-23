@@ -27,11 +27,11 @@ public class AusgabeFragment extends Fragment {
         heatView = view.findViewById(R.id.heatInfo);
 
         if(weather != null){
-            tempTextView.setText((getString(R.string.außentemp) + weather.getTemp()
+            tempTextView.setText((getString(R.string.außentemp) + " " + weather.getTemp()
                     + (weather.getIsFahrenheit() ?
                     getString(R.string.f) : getString((R.string.c)))));
             humidityTextView.setText((getString(R.string.relative_luftfeuchtigkeit)
-                    + weather.getHumidity() + getString(R.string.string_percent)));
+                    + " " + weather.getHumidity() + getString(R.string.string_percent)));
             ergebnisTextView.setText((getString(R.string.indexBetraegt) + "\n"
                     + weather.getHeatIndex() + (weather.getIsFahrenheit() ?
                     getString(R.string.f) : getString((R.string.c)))));
