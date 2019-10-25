@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Weather.class}, version = 1, exportSchema = false)
+@Database(entities = {Weather.class}, version = 2, exportSchema = false)
 public abstract class WeatherRoomDatabase extends RoomDatabase {
     public abstract WeatherDao weatherDao();
 
@@ -15,7 +15,8 @@ public abstract class WeatherRoomDatabase extends RoomDatabase {
     static WeatherRoomDatabase getDatabase(Context context){
         if(INSTANCE == null){
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                    WeatherRoomDatabase.class, "Weather_Database").build();
+                    WeatherRoomDatabase.class, "Weather_Database")
+                    .fallbackToDestructiveMigration().build();
         }
         return INSTANCE;
     }

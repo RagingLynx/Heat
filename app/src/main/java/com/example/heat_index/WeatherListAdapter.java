@@ -11,7 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -38,14 +40,15 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        //hier einfach alle Views aufführen und setzen die zur Darstellung gebraucht werden
+        //hier werden alle Views aufgeführt und gesetzt die zur Darstellung gebraucht werden
         TextView aussentempText = holder.itemView.findViewById(R.id.temperatur_text);
         TextView luftfeuchtText = holder.itemView.findViewById(R.id.luftfeucht_text);
         TextView heatText = holder.itemView.findViewById(R.id.heat_text);
+        TextView dateText = holder.itemView.findViewById(R.id.date_text);
+        ImageButton delbutton = holder.itemView.findViewById(R.id.delete_button);
+
         Resources res = holder.itemView.getContext().getResources();
 
-
-        ImageButton delbutton = holder.itemView.findViewById(R.id.delete_button);
         Weather aktuellesWeather = weathers.get(position);
 
         aussentempText.setText((aktuellesWeather.getTemp() +
@@ -56,6 +59,9 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         heatText.setText((aktuellesWeather.getHeatIndex() +
                 (aktuellesWeather.getIsFahrenheit() ?
                         res.getString(R.string.f) : res.getString(R.string.c))));
+        Date currentDate = new Date(aktuellesWeather.getDate());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        dateText.setText(sdf.format(currentDate).toString());
 
 
 

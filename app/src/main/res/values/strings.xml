@@ -25,6 +25,7 @@
     <string name="warnung_3">Gefahr – Sonnenstich, Hitzekrampf und Hitzekollaps sind wahrscheinlich; Hitzschlag ist möglich.</string>
     <string name="warnung_4">Erhöhte Gefahr – Hitzschlag und Sonnenstich sind wahrscheinlich.</string>
     <string name="leere_ausgabeseite_string">Gehen sie auf Eingabe um einen Heat Index zu berechnen</string>
+    <string name="delete_content_description">Trash-Can</string>
 
 
 </resources>

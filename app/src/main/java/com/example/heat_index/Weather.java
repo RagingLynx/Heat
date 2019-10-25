@@ -13,6 +13,7 @@ public class Weather {
     private final int humidity;
     private double heatIndex;
     private final boolean isFahrenheit;
+    private long date;
 
 
 
@@ -40,7 +41,6 @@ public class Weather {
         return isFahrenheit;
     }
 
-
     public int getId(){
         return id;
     }
@@ -48,6 +48,10 @@ public class Weather {
     public void setId(int id){
         this.id = id;
     }
+
+    public long getDate() { return date; }
+
+    public void setDate(long date){ this.date = date; }
 
 
     /**
@@ -60,6 +64,7 @@ public class Weather {
         this.humidity = humidity;
         this.temp = temp;
         this.isFahrenheit = isFahrenheit;
+        this.date = new Date().getTime();
 
         calculate(temp, humidity);
     }
