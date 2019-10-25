@@ -3,7 +3,7 @@
     <string name="eingabe">Eingabe</string>
     <string name="außentemp">Außentemperatur:</string>
     <string name="relative_luftfeuchtigkeit">relative Luftfeuchtigkeit: </string>
-    <string name="heat_index_berechnen">Hitze-Index berechnen</string>
+    <string name="heat_index_berechnen">HeatIndex</string>
     <string name="ergebnis">HeatIndex</string>
     <string name="ergebnis_title">Ergebnis</string>
     <string name="verlauf_title">Verlauf</string>
