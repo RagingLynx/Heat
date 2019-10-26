@@ -1,6 +1,7 @@
 package com.example.heat_index;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +20,10 @@ import java.util.List;
 public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Weather> weathers = Collections.emptyList();
     private final WeatherDao dao;
+
     WeatherListAdapter(WeatherDao dao){
         this.dao = dao;
     }
-
-
 
     void setWeathers(List<Weather> weathers){
         this.weathers = weathers;
@@ -63,9 +63,6 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         dateText.setText(sdf.format(currentDate).toString());
 
-
-
-
         delbutton.setOnClickListener((view) -> {
             String jaString = holder.itemView.getResources().getString(R.string.ja_auswahl);
             new AlertDialog.Builder(holder.itemView.getContext())
@@ -76,10 +73,21 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     .setNegativeButton(R.string.abbruch_auswahl, null)
                     .show();
         });
+
+        holder.itemView.setOnClickListener(view ->{
+            Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
+            intent.putExtra("temp", aktuellesWeather.getTemp())
+                    .putExtra("humidity", aktuellesWeather.getHumidity())
+                    .putExtra("heatIndex", aktuellesWeather.getHeatIndex())
+                    .putExtra("date", aktuellesWeather.getDate());
+            holder.itemView.getContext().startActivity(intent);
+
+        });
     }
 
     @Override
     public int getItemCount() {
         return weathers.size();
     }
+
 }
