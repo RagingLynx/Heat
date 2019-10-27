@@ -20,6 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginHorizontal="10dp"
+            android:baselineAligned="false"
             >
 
             <TextView
@@ -54,7 +55,8 @@
             android:layout_marginTop="80dp"
             app:layout_constraintStart_toStartOf="@+id/linearTemp"
             app:layout_constraintTop_toTopOf="@+id/linearTemp"
-            android:layout_marginHorizontal="10dp">
+            android:layout_marginHorizontal="10dp"
+            android:baselineAligned="false">
 
             <TextView
                 android:layout_width="0dp"
@@ -62,7 +64,8 @@
                 android:layout_weight="12"
                 android:text="@string/relative_luftfeuchtigkeit"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                />
 
             <EditText
                 android:id="@+id/humidity_eingabe"
