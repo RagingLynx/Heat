@@ -29,7 +29,7 @@ public class DetailActivity extends AppCompatActivity {
         boolean isFahrenheit = extras.getBoolean("isFahrenheit");
 
         Date date = new Date(extras.getLong("date"));
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy \n hh:mm");
         dateDetail.setText(("" + sdf.format(date)));
 
         tempDetail.setText((extras.getDouble("temp") + (isFahrenheit ? getString(R.string.f):
