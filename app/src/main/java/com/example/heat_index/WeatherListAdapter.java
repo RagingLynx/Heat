@@ -79,7 +79,8 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             intent.putExtra("temp", aktuellesWeather.getTemp())
                     .putExtra("humidity", aktuellesWeather.getHumidity())
                     .putExtra("heatIndex", aktuellesWeather.getHeatIndex())
-                    .putExtra("date", aktuellesWeather.getDate());
+                    .putExtra("date", aktuellesWeather.getDate())
+                    .putExtra("isFahrenheit", aktuellesWeather.getIsFahrenheit());
             holder.itemView.getContext().startActivity(intent);
 
         });
