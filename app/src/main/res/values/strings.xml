@@ -29,6 +29,22 @@
     <string name="warnung_3">Gefahr – Sonnenstich, Hitzekrampf und Hitzekollaps sind wahrscheinlich; Hitzschlag ist möglich.</string>
     <string name="warnung_4">Erhöhte Gefahr – Hitzschlag und Sonnenstich sind wahrscheinlich.</string>
 
+    <string name="infoText1">Diese App soll durch die Parameter Temperatur und relative Luftfeuchtigkeit den sogenannten HeatIndex berechnen.
+
+
+        </string>
+    <string name="infoText2">Der Heat Index ist eine in Einheiten der Temeratur angeebene Größe zur Beschreibung der
+        gefühlten Temperatur auf Basis der gemessenen Lufttemperatur sowie vor allem der relativen Luftfeuchtigkeit.
+        Sie geht auf die Arbeiten des US-Amerikantikaners Robert G. Steadman
+        aus dem Jahre 1979 zurück. Ähnlich, jedoch einfacher, wird der in Kanada entwickelte und häufiger anzutreffende Humindex (humidity index berchnet)</string>
+
+    <string name="infoText3">Eine hohe Luftfeuchte wirkt, vor allem bei hoher Temperatur, also bei Schwüle,
+        belastend auf den Organismus der Menschen und aller Säugetiere.
+        Sie behindert die Thermoregulation des Körpers durch Schweißabsonderung der Haut,
+        beeinträchtigt so deren subjektives Wohlbefinden und erhöht objektiv die Gefahr eines Hitzeschadens.
+        Infolgedessen ist für Menschen ein Aufenthalt in der Wüste meist leichter zu verkraften
+        als im Tropischen Regenwald mit dessen geringerer Temperatur, aber wesentlich höherer Luftfeuchte.</string>
+
 
 
 </resources>

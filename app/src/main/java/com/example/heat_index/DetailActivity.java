@@ -29,7 +29,7 @@ public class DetailActivity extends AppCompatActivity {
         boolean isFahrenheit = extras.getBoolean("isFahrenheit");
 
         Date date = new Date(extras.getLong("date"));
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy \n hh:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy \n hh:mm");
         dateDetail.setText(("" + sdf.format(date)));
 
         tempDetail.setText((extras.getDouble("temp") + (isFahrenheit ? getString(R.string.f):
@@ -48,8 +48,8 @@ public class DetailActivity extends AppCompatActivity {
             if (heatIndex > 54) warnHinweis = getString(R.string.warnung_4);
             else if (heatIndex > 40) warnHinweis = getString(R.string.warnung_3);
             else if (heatIndex > 32) warnHinweis = getString(R.string.warnung_2);
-            else if (heatIndex > 27) warnHinweis = getString(R.string.warnung_1);
-            else heatIndexDetail.setText("");
+            else if (heatIndex >= 27) warnHinweis = getString(R.string.warnung_1);
+            else warnHinweis = "";
         }
         else{
             if (heatIndex > 130) warnHinweis = getString(R.string.warnung_4);

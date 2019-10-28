@@ -8,11 +8,42 @@
     android:background="@drawable/bgn">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="thisisthethirdtest"
-        android:textSize="20dp"
-        android:gravity="center"/>
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/verlauf_item_shape"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/infoText1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:padding="7dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/infoText2"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:padding="7dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/infoText3"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:padding="7dp"
+                />
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
