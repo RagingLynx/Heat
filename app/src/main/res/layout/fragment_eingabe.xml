@@ -24,6 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginHorizontal="10dp"
             android:baselineAligned="false"
+            android:gravity="center_vertical"
             >
 
             <TextView
@@ -32,7 +33,8 @@
                 android:layout_weight="12"
                 android:text="@string/außentemp"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                />
 
             <EditText
                 android:id="@+id/temperatur_eingabe"
@@ -59,7 +61,8 @@
             app:layout_constraintStart_toStartOf="@+id/linearTemp"
             app:layout_constraintTop_toTopOf="@+id/linearTemp"
             android:layout_marginHorizontal="10dp"
-            android:baselineAligned="false">
+            android:baselineAligned="false"
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="0dp"
