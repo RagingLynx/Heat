@@ -33,7 +33,7 @@
 
 
         </string>
-    <string name="infoText2">Der Heat Index ist eine in Einheiten der Temeratur angeebene Größe zur Beschreibung der
+    <string name="infoText2">Der Heat Index ist eine in Einheiten der Temperatur angegebene Größe zur Beschreibung der
         gefühlten Temperatur auf Basis der gemessenen Lufttemperatur sowie vor allem der relativen Luftfeuchtigkeit.
         Sie geht auf die Arbeiten des US-Amerikantikaners Robert G. Steadman
         aus dem Jahre 1979 zurück. Ähnlich, jedoch einfacher, wird der in Kanada entwickelte und häufiger anzutreffende Humindex (humidity index berchnet)</string>
@@ -43,8 +43,16 @@
         Sie behindert die Thermoregulation des Körpers durch Schweißabsonderung der Haut,
         beeinträchtigt so deren subjektives Wohlbefinden und erhöht objektiv die Gefahr eines Hitzeschadens.
         Infolgedessen ist für Menschen ein Aufenthalt in der Wüste meist leichter zu verkraften
-        als im Tropischen Regenwald mit dessen geringerer Temperatur, aber wesentlich höherer Luftfeuchte.</string>
+        als im Tropischen Regenwald mit dessen geringerer Temperatur, aber wesentlich höherer Luftfeuchte.
+        Deshalb wird der HeatIndex gewöhnlicherweise nur für Außentemperaturen zwischen 27 und 43°C oder 80 und 110°F berechnet </string>
 
+    <string name="formel">Die Formel zur Berechnung des HeatIndex lautet:\nHI = c₁ + c₂T + c₃φ +
+        c₄Tφ + c₅T² + c₆φ² + c₇T²φ + c₈Tφ² + c₉T²φ²\ndabei steht T für die
+        Temperatur und φ für die relative Luftfeuchtigkeit.
+        c₁ bis c₉ sind Konstanten die abhängig von der verwendeten Temperatureinheit sind:</string>
+
+    <string name="zusatzinfos"></string>
+    <string name="konstanten_tabelle">Konstanten Tabelle</string>
 
 
 </resources>

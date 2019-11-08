@@ -7,15 +7,13 @@
     android:clickable="true"
     android:background="@drawable/bgn">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/verlauf_item_shape"
             android:orientation="vertical"
             android:layout_margin="5dp">
@@ -24,27 +22,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/infoText1"
-                android:textSize="20dp"
-                android:gravity="left"
+                android:textSize="20sp"
+                android:gravity="start"
                 android:padding="7dp"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/infoText2"
-                android:textSize="20dp"
-                android:gravity="left"
+                android:text="@string/formel"
+                android:textSize="20sp"
+                android:gravity="start"
                 android:padding="7dp"
                 />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table"
+                android:contentDescription="@string/konstanten_tabelle"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/infoText2"
+                android:textSize="20sp"
+                android:gravity="start"
+                android:padding="7dp"
+                />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/infoText3"
-                android:textSize="20dp"
-                android:gravity="left"
+                android:textSize="20sp"
+                android:gravity="start"
                 android:padding="7dp"
+                android:layout_marginBottom="10dp"
                 />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
