@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         Date date = new Date(extras.getLong("date"));
-        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy \n hh:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy \n hh:mm", Locale.getDefault());
         dateDetail.setText(("" + sdf.format(date)));
 
         tempDetail.setText((extras.getDouble("temp") + (isFahrenheit ? getString(R.string.f):

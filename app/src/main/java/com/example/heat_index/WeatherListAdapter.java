@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Weather> weathers = Collections.emptyList();
@@ -60,7 +61,7 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 (aktuellesWeather.getIsFahrenheit() ?
                         res.getString(R.string.f) : res.getString(R.string.c))));
         Date currentDate = new Date(aktuellesWeather.getDate());
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         dateText.setText(sdf.format(currentDate));
 
         delbutton.setOnClickListener((view) -> {
