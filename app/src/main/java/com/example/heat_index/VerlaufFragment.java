@@ -15,8 +15,8 @@ import java.util.List;
 
 
 public class VerlaufFragment extends Fragment {
-    private WeatherDao dao;
-    private WeatherListAdapter wAdapter;
+    private static WeatherDao dao;
+    private static WeatherListAdapter wAdapter;
 
     @Nullable
     @Override
@@ -40,7 +40,7 @@ public class VerlaufFragment extends Fragment {
         new LadeWeatherTask().execute();
     }
 
-    class LadeWeatherTask extends AsyncTask<Void, Void, List<Weather>>{
+    static class LadeWeatherTask extends AsyncTask<Void, Void, List<Weather>>{
 
         @Override
         protected List<Weather> doInBackground(Void... voids) {

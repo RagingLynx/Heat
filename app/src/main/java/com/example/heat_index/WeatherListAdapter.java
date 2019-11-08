@@ -61,7 +61,7 @@ public class WeatherListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                         res.getString(R.string.f) : res.getString(R.string.c))));
         Date currentDate = new Date(aktuellesWeather.getDate());
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        dateText.setText(sdf.format(currentDate).toString());
+        dateText.setText(sdf.format(currentDate));
 
         delbutton.setOnClickListener((view) -> {
             String jaString = holder.itemView.getResources().getString(R.string.ja_auswahl);

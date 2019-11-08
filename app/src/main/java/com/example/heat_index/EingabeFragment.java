@@ -21,7 +21,7 @@ public class EingabeFragment extends Fragment {
     private EditText humidity_text;
     private boolean isFahrenheit = false;
     private EingabeFragmentListener listener;
-    private WeatherDao dao;
+    private static WeatherDao dao;
     private Weather weather;
 
     public interface EingabeFragmentListener {
@@ -51,7 +51,6 @@ public class EingabeFragment extends Fragment {
             String temperatur = temp_text.getText().toString();
             String feuchtigkeit = humidity_text.getText().toString();
 
-
             if(temperatur.equals("") || feuchtigkeit.equals("")) {
                 Toast.makeText(getContext(),
                         "Bitte alle Felder ausfüllen",
@@ -63,8 +62,9 @@ public class EingabeFragment extends Fragment {
                 double temper = Double.parseDouble(temperatur);
                 int humid = Integer.parseInt(feuchtigkeit);
 
-                if ((humid < 0 || humid > 100) && ((!isFahrenheit && (temper < 27 || temper > 43)))
-                        || (isFahrenheit && (temper < 80 || temper > 110))) {
+
+                if ((humid < 0 || humid > 100) && ((!isFahrenheit && (temper < 27 || temper > 43))
+                        || (isFahrenheit && (temper < 80 || temper > 110)))) {
                     Toast.makeText(getContext(),
                             "Temperatur muss zwischen 27 und 43°C bzw 80 und 110°F liegen, und Luftfeuchtigkeit zwischen 0 und 100%!",
                             Toast.LENGTH_LONG)
@@ -120,7 +120,7 @@ public class EingabeFragment extends Fragment {
 
     }
 
-    public class SpeichernTask extends AsyncTask<Weather, Void, Void>{
+    public static class SpeichernTask extends AsyncTask<Weather, Void, Void>{
 
         @Override
         protected Void doInBackground(Weather... weathers){

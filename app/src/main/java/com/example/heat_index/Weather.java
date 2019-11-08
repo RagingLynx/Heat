@@ -21,23 +21,23 @@ public class Weather {
      *
      * @return returns the value of heatIndex
      */
-    public double getHeatIndex(){
+    double getHeatIndex(){
         return heatIndex;
     }
 
-    public void setHeatIndex(double heatIndex){
+    void setHeatIndex(double heatIndex){
         this.heatIndex = heatIndex;
     }
 
-    public double getTemp() {
+    double getTemp() {
         return temp;
     }
 
-    public int getHumidity() {
+    int getHumidity() {
         return humidity;
     }
 
-    public boolean getIsFahrenheit() {
+    boolean getIsFahrenheit() {
         return isFahrenheit;
     }
 
@@ -49,9 +49,9 @@ public class Weather {
         this.id = id;
     }
 
-    public long getDate() { return date; }
+    long getDate() { return date; }
 
-    public void setDate(long date){ this.date = date; }
+    void setDate(long date){ this.date = date; }
 
 
     /**

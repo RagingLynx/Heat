@@ -1,14 +1,12 @@
 package com.example.heat_index;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -26,7 +24,10 @@ public class DetailActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        boolean isFahrenheit = extras.getBoolean("isFahrenheit");
+        boolean isFahrenheit = false;
+        if (extras != null) {
+            isFahrenheit = extras.getBoolean("isFahrenheit");
+        }
 
         Date date = new Date(extras.getLong("date"));
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy \n hh:mm");
