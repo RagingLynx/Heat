@@ -51,7 +51,7 @@
         Temperatur und φ für die relative Luftfeuchtigkeit.
         c₁ bis c₉ sind Konstanten die abhängig von der verwendeten Temperatureinheit sind:</string>
 
-    <string name="zusatzinfos"></string>
+    
     <string name="konstanten_tabelle">Konstanten Tabelle</string>
 
     <string name="info_source">Quellen:</string>

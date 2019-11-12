@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/verlauf_item_shape"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:paddingBottom="7sp"
+        >
 
         <TextView
             android:id="@+id/ausgabe_eingegebene_temp"
