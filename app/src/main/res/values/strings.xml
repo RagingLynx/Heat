@@ -54,5 +54,8 @@
     <string name="zusatzinfos"></string>
     <string name="konstanten_tabelle">Konstanten Tabelle</string>
 
+    <string name="info_source">Quellen:</string>
+    <string name="info_source1">https://de.wikipedia.org/wiki/Hitzeindex</string>
+    <string name="info_source2">https://www.weather.gov/ama/heatindex</string>
 
 </resources>
